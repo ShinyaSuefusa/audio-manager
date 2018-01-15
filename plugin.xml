@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-audio-manager" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>audio-manager</name>
+    <description>audio manager plugin for Android</description>
+    <author>Shinya Suefusa</author>
+    <keywords>Android, AudioManager</keywords>
+    <license>MIT</license>
+    <engines>
+    	<engine name="cordova-android" version=">6.0.0"/>
+  	</engines>
+    <js-module name="audio-manager" src="www/audio-manager.js">
+        <clobbers target="cordova.plugins.audiomanager" />
+    </js-module>
+    <platform name="android">
+    	<config-file target="res/xml/config.xml" parent="/*">
+    		<feature name="audio-manager">
+    			<param name="android-package" value="org.apache.cordova.media.AudioManagerPlugin"/>
+    		</feature>
+    	</config-file>
+    	<source-file src="src/android/AudioManagerPlugin.java" target-dir="src/org/apache/cordova/media"/>
+    </platform>
+</plugin>
